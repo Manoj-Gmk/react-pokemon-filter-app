@@ -1,8 +1,6 @@
-// Importing necessary modules and styles
 import React from "react";
-import "./App.css"; // Importing CSS for styling the navbar
+import "./App.css"; 
 
-// Navbar component that takes three props: handleSearch, searchitem, and handleTypeFilter
 function Navbar({ handleSearch, searchitem, handleTypeFilter }) {
   // Predefined list of Pokémon types for the select dropdown
   const options = [
@@ -27,27 +25,22 @@ function Navbar({ handleSearch, searchitem, handleTypeFilter }) {
 
   return (
     <>
-      {/* Header section with the title */}
       <header>
         <h1>Interactive Data Explorer</h1>
       </header>
-
-      {/* Body section containing the search input and type filter */}
       <div className="body">
         {/* Search input field */}
         <input
-          placeholder="Search..." // Placeholder text for the input field
-          type="text" // Defining the type as text for user input
-          value={searchitem} // Value is controlled by the parent component
-          onChange={handleSearch} // Calling the handleSearch function on change
+          placeholder="Search..." 
+          type="text" 
+          value={searchitem} 
+          onChange={handleSearch} 
         />
 
         {/* Dropdown for selecting Pokémon type */}
         <div>
           <select name="Types" onChange={handleTypeFilter}>
-            {/* Default option for type selection */}
             <option value="">Select Type</option>
-            {/* Mapping through the predefined Pokémon types and displaying them as options */}
             {options.map((type, index) => (
               <option key={index} value={type}>
                 {type}
